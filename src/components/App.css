@@ -1,3 +1,4 @@
 .App {
     background-image: url("../static/peakpx.jpg");
+    height: 100vh;
 }
