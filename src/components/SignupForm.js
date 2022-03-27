@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Redirect } from 'react-router-dom';
 import JoblyApi from '../api';
+import './SignupForm.css';
 
 /** SignupForm
  *
@@ -48,49 +49,56 @@ function SignupForm({ updateToken }) {
   if (isRedirect) return <Redirect to="/" />
 
   return (
-    <form className='SignupForm' onSubmit={handleSubmit}>
-      <label htmlFor='username'>Username</label>
-      <input id='username'
-        name='username'
-        value={formData.username}
-        onChange={handleChange}
-        required />
+    <form className='SignupForm form-group p-5 d-flex align-items-center justify-content-center' onSubmit={handleSubmit}>
+      <div className='SignupForm-container w-25'>
+        <label htmlFor='username' className='form-label mt-4'>Username</label>
+        <input id='username'
+          name='username'
+          className="form-control"
+          value={formData.username}
+          onChange={handleChange}
+          required />
 
-      <label htmlFor='password'>Password</label>
-      <input id='password'
-        type="password"
-        name='password'
-        value={formData.password}
-        onChange={handleChange}
-        required />
+        <label htmlFor='password' className='form-label mt-4'>Password</label>
+        <input id='password'
+          type="password"
+          name='password'
+          className="form-control"
+          value={formData.password}
+          onChange={handleChange}
+          required />
 
-      <label htmlFor='firstName'>First Name</label>
-      <input id='firstName'
-        name='firstName'
-        value={formData.firstName}
-        onChange={handleChange}
-        required />
+        <label htmlFor='firstName' className='form-label mt-4'>First Name</label>
+        <input id='firstName'
+          name='firstName'
+          className="form-control"
+          value={formData.firstName}
+          onChange={handleChange}
+          required />
 
-      <label htmlFor='lastName'>Last Name</label>
-      <input id='lastName'
-        name='lastName'
-        value={formData.lastName}
-        onChange={handleChange}
-        required />
+        <label htmlFor='lastName' className='form-label mt-4'>Last Name</label>
+        <input id='lastName'
+          name='lastName'
+          className="form-control"
+          value={formData.lastName}
+          onChange={handleChange}
+          required />
 
-      <label htmlFor='email'>Email</label>
-      <input id='email'
-        type="email"
-        name='email'
-        value={formData.email}
-        onChange={handleChange}
-        required />
+        <label htmlFor='email' className='form-label mt-4'>Email</label>
+        <input id='email'
+          type="email"
+          name='email'
+          className="form-control"
+          value={formData.email}
+          onChange={handleChange}
+          required />
 
-      <button className="SignupForm-button">SignUp</button>
-      <br />
-      {errors && errors.map((e, i) => {
-        return <p className="SignupForm-errors" key={i}>{e}</p>
-      })}
+        <br />
+        <button className="SignupForm-button btn btn-primary">SignUp</button>
+        {errors && errors.map((e, i) => {
+          return <p className="SignupForm-errors" key={i}>{e}</p>
+        })}
+      </div>
     </form>
   )
 }

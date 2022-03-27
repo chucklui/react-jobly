@@ -55,7 +55,7 @@ function CompanyList() {
 
   return (
     <div className="CompanyList container">
-      <SearchForm handleSearch={handleSearch} />
+      <SearchForm handleSearch={handleSearch}/>
       {companies.map(c => {
         return (
           <Link className='CompanyList' key={c.handle} to={`/companies/${c.handle}`}>

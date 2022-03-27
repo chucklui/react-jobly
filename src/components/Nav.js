@@ -14,37 +14,40 @@ function Nav({ logout }) {
   const currentUser = useContext(UserContext);
 
   return (
-    <nav className="Nav container-fluid">
-      <div className="Nav navbar navbar-expand-lg navbar-dark bg-primary">
-        <NavLink exact to="/" className="Nav navbar-brand">Jobly</NavLink>
-        <ul className="Nav navbar-nav">
+    <nav className="Nav navbar navbar-expand-lg navbar-dark bg-primary">
+      <div className="Nav-container container-fluid">
+        <NavLink exact to="/" className="Nav-brand navbar-brand">Jobly</NavLink>
+        <div className='Nav-list-container collapse navbar-collapse'>
+          <ul className="Nav-list navbar-nav ms-auto">
 
-          {!currentUser &&
-            <>
-              <li className="Nav-link nav-item">
-                <NavLink className="Nav" to="/login">Login</NavLink>
-              </li>
-              <li className="Nav-link nav-item">
-                <NavLink className="Nav nav-link" to="/signup">Signup</NavLink>
-              </li>
-            </>}
+            {!currentUser &&
+              <>
+                <li className="Nav-item nav-item">
+                  <NavLink className="Nav-link nav-link" to="/login">Login</NavLink>
+                </li>
+                <li className="Nav-item nav-item">
+                  <NavLink className="Nav-link nav-link" to="/signup">Signup</NavLink>
+                </li>
+              </>}
 
-          {currentUser &&
-            <>
-              <li className="Nav-link nav-item">
-                <NavLink className="Nav nav-link" to="/companies">Companies</NavLink>
-              </li>
-              <li className="Nav-link nav-item">
-                <NavLink className="Nav nav-link" to="/jobs">Jobs</NavLink>
-              </li>
-              <li className="Nav-link nav-item">
-                <NavLink className="Nav nav-link" to={`/profile/${currentUser.username}`}>Profile</NavLink>
-              </li>
-              <li className="Nav-link nav-item nav-right">
-                <Link className="Nav nav-link" to="/" onClick={() => logout()}>Logout {currentUser.firstName}</Link>
-              </li>
-            </>}
-        </ul>
+            {currentUser &&
+              <>
+                <li className="Nav-item nav-item">
+                  <NavLink className="Nav-link nav-link" to="/companies">Companies</NavLink>
+                </li>
+                <li className="Nav-item nav-item">
+                  <NavLink className="Nav-link nav-link" to="/jobs">Jobs</NavLink>
+                </li>
+                <li className="Nav-item nav-item">
+                  <NavLink className="Nav-link nav-link" to={`/profile/${currentUser.username}`}>Profile</NavLink>
+                </li>
+                <li className="Nav-item nav-item">
+                  <Link className="Nav-link nav-link" to="/" onClick={() => logout()}>Logout {currentUser.firstName}</Link>
+                </li>
+              </>}
+              
+          </ul>
+        </div>
       </div>
     </nav>
   )

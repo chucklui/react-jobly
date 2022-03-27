@@ -1,5 +1,6 @@
 import UserContext from './userContext';
 import { useContext } from 'react';
+import './Homepage.css';
 
 /**Homepage
  *
@@ -13,15 +14,15 @@ function Homepage() {
 
   if (currentUser) {
     return (
-      <div className="Homepage">
-        <h1 className="Homepage-title">Welcome to Jobly, {currentUser.firstName}</h1>
+      <div className="Homepage d-flex align-items-center justify-content-center">
+        <h1 className="Homepage-title">Welcome back, {currentUser.firstName}</h1>
       </div>
     );
   }
 
   return (
-    <div className="Homepage">
-      <h1 className="Homepage-title">Welcome to Jobly</h1>
+    <div className="Homepage d-flex align-items-center justify-content-center">
+      <h1 className="Homepage-title">Welcome to Jobly!</h1>
     </div>
   );
 }

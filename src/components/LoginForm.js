@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Redirect } from 'react-router-dom';
 import JoblyApi from '../api';
+import './LoginForm.css';
 
 /**LoginForm
  *
@@ -47,25 +48,29 @@ function LoginForm({ updateToken }) {
   if (isRedirect) return <Redirect to="/" />;
 
   return (
-    <form className='LoginForm' onSubmit={handleSubmit}>
-      <label htmlFor='username'>Username</label>
-      <input id='username'
-        name='username'
-        value={formData.username}
-        onChange={handleChange} required />
+    <form className='LoginForm form-group p-5 d-flex align-items-center justify-content-center' onSubmit={handleSubmit}>
+      <div className='LoginForm-container w-25'>
+        <label htmlFor='username' className='form-label mt-4'>Username</label>
+        <input id='username'
+          name='username'
+          className="form-control"
+          value={formData.username}
+          onChange={handleChange} required />
 
-      <label htmlFor='password'>Password</label>
-      <input id='password'
-        type="password"
-        name='password'
-        value={formData.password}
-        onChange={handleChange} required />
+        <label htmlFor='password' className='form-label mt-4'>Password</label>
+        <input id='password'
+          type="password"
+          name='password'
+          className="form-control"
+          value={formData.password}
+          onChange={handleChange} required />
 
-      <button className="LoginForm-button">Login</button>
-      <br />
-      {errors && errors.map((e, i) => {
-        return <p className="LoginForm-errors" key={i}>{e}</p>
-      })}
+        <br />
+        <button className="LoginForm-button btn btn-primary">Login</button>
+        {errors && errors.map((e, i) => {
+          return <p className="LoginForm-errors" key={i}>{e}</p>
+        })}
+      </div>
     </form>
   )
 }

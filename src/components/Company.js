@@ -8,7 +8,7 @@
  */
 function Company({ company }) {
   return (
-    <div className="Company card mt-3 mb-3 bg-primary">
+    <div className="Company card text-dark bg-light mt-3 mb-3 border-dark">
       <div className="Company-name card-header">{company.name}</div>
       <div className="Company-body card-body">
         <p className="Company-description card-text">Description: {company.description}</p>

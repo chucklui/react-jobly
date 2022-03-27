@@ -28,14 +28,14 @@ function SearchForm({ handleSearch }) {
   }
 
   return (
-      <form className="SearchForm" onSubmit={handleSubmit}>
-        <input className="SearchForm-input"
+      <form className="SearchForm d-flex m-3" onSubmit={handleSubmit}>
+        <input className="SearchForm-input form-control me-sm-2"
           type="search"
           placeholder="Enter Search Term"
           onChange={handleChange}
           name="query"
           value={formData.query} />
-        <button className="SearchForm-button">Submit</button>
+        <button className="SearchForm-button btn btn-secondary my-2 my-sm-0">Submit</button>
       </form>
   )
 }

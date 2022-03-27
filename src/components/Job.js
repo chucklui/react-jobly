@@ -8,7 +8,7 @@
  */
 function Job({ job }) {
   return (
-    <div className="Job card mt-3 mb-3 bg-primary">
+    <div className="Job card text-dark bg-light mt-3 mb-3 border-secondary">
       <div class="Job-title card-header">Job: {job.title}</div>
       <div className="Job-body card-body">
         <p className="Job-salary card-text">Salary: {job.salary}</p>
